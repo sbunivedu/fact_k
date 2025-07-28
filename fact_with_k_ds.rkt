@@ -19,6 +19,12 @@
   (lambda (n)
     (fact/k n (end-cont))))
 
+(define fact1
+  (lambda (n)
+    (if (zero? n)
+        1
+        (* n (fact1 (- n 1))))))
+
 (define fact/k
   (lambda (n cont)
     (if (zero? n)
